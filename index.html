@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python Cheat Sheet poster · 12 print-ready themes</title>
+<meta name="description" content="A beginner-to-intermediate Python reference, as an 18 × 24 inch wall poster in twelve colour themes. Free print-ready PNG files at 300 dpi.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A0A0A'/%3E%3Cpath d='M5 10l5 6-5 6M13 10l5 6-5 6M21 10l5 6-5 6' fill='none' stroke='%2320E3D2' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #0B1016; --panel: #111A24; --panel2: #0E151D; --line: #263444; --line2: #1A2532;
+    --txt: #E8EEF4; --txt2: #A9B8C7; --txt3: #8496A8; --amber: #FFB21A; --red: #FF5A4D; --ink: #0B1016;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, Menlo, "DejaVu Sans Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--txt); font-family: var(--sans); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  a { color: var(--amber); text-underline-offset: 3px; }
+  a:hover { color: #FFD071; }
+  :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+  .wrap { max-width: 1360px; margin: 0 auto; padding: 0 28px; }
+  .mono { font-family: var(--mono); }
+
+  /* masthead */
+  .strip { background: var(--amber); color: var(--ink); font-family: var(--mono); font-size: 12.5px; font-weight: 700; letter-spacing: 0.14em; }
+  .strip .wrap { display: flex; justify-content: space-between; gap: 16px; padding-top: 7px; padding-bottom: 7px; }
+  header.top { border-bottom: 1px solid var(--line); background:
+      linear-gradient(var(--line2) 1px, transparent 1px) 0 0 / 100% 44px,
+      linear-gradient(90deg, var(--line2) 1px, transparent 1px) 0 0 / 44px 100%, var(--bg); }
+  header.top .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: end; padding-top: 56px; padding-bottom: 48px; }
+  .kicker { font-family: var(--mono); font-size: 13px; letter-spacing: 0.16em; color: var(--amber); margin: 0 0 14px; }
+  h1 { font-size: clamp(40px, 6.4vw, 84px); line-height: 0.98; letter-spacing: -0.025em; margin: 0; font-weight: 800; text-transform: uppercase; }
+  h1 span { display: block; color: var(--amber); }
+  .lede { max-width: 62ch; font-size: 19px; color: var(--txt2); margin: 22px 0 0; }
+  .lede b { color: var(--txt); font-weight: 600; }
+  .stats { display: grid; grid-template-columns: repeat(3, auto); gap: 0; border: 1px solid var(--line); background: var(--panel2); }
+  .stats div { padding: 14px 22px; border-left: 1px solid var(--line); }
+  .stats div:first-child { border-left: 0; }
+  .stats b { display: block; font-family: var(--mono); font-size: 30px; line-height: 1.1; color: var(--txt); }
+  .stats span { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; color: var(--txt3); text-transform: uppercase; }
+  nav.jump { border-bottom: 1px solid var(--line); background: var(--panel2); position: sticky; top: 0; z-index: 5; }
+  nav.jump .wrap { display: flex; gap: 28px; padding-top: 12px; padding-bottom: 12px; font-family: var(--mono); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; overflow-x: auto; white-space: nowrap; }
+  nav.jump a { color: var(--txt2); text-decoration: none; }
+  nav.jump a:hover { color: var(--amber); }
+
+  section { padding: 56px 0 8px; }
+  .band { display: flex; align-items: baseline; gap: 16px; border-bottom: 2px solid var(--amber); padding-bottom: 10px; margin-bottom: 26px; flex-wrap: wrap; }
+  .band h2 { font-family: var(--mono); font-size: 17px; letter-spacing: 0.16em; text-transform: uppercase; margin: 0; color: var(--amber); }
+  .band p { margin: 0; color: var(--txt2); font-size: 15.5px; }
+
+  /* theme cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); gap: 22px; }
+  .card { background: var(--panel); border: 1px solid var(--line); display: flex; flex-direction: column; }
+  .shot { display: block; position: relative; background: var(--tb); aspect-ratio: 3 / 4; overflow: hidden; border-bottom: 1px solid var(--line); cursor: zoom-in; }
+  .shot img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
+  .shot:hover img { transform: scale(1.025); }
+  .shot .open { position: absolute; left: 12px; bottom: 12px; background: var(--ink); color: var(--txt); border: 1px solid var(--line); font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; padding: 6px 10px; text-transform: uppercase; opacity: 0; transition: opacity .2s; }
+  .shot:hover .open, .shot:focus-visible .open { opacity: 1; }
+  .meta { padding: 14px 16px 6px; display: grid; grid-template-columns: auto 1fr auto; gap: 4px 10px; align-items: center; }
+  .num { font-family: var(--mono); font-weight: 700; font-size: 13px; background: var(--ta); color: var(--to); padding: 2px 7px; }
+  .card h3 { margin: 0; font-size: 18px; letter-spacing: 0.01em; }
+  .sw { display: flex; gap: 4px; }
+  .sw i { width: 14px; height: 14px; border: 1px solid rgba(255,255,255,.28); display: block; }
+  .meta p { grid-column: 1 / -1; margin: 2px 0 0; color: var(--txt2); font-size: 14.5px; line-height: 1.45; }
+  .sizes { margin-top: auto; padding: 10px 16px 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .sizes a { display: block; text-align: center; font-family: var(--mono); font-size: 13px; font-weight: 600; padding: 8px 4px; border: 1px solid var(--line); color: var(--txt); text-decoration: none; background: var(--panel2); }
+  .sizes a:hover { border-color: var(--amber); color: var(--amber); }
+  .sizes a.main { background: var(--amber); border-color: var(--amber); color: var(--ink); }
+  .sizes a.main:hover { background: #FFC758; color: var(--ink); }
+  .hint { color: var(--txt3); font-size: 14px; margin: 18px 0 0; }
+
+  /* printing */
+  .cols { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 12px 14px; border: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--txt3); background: var(--panel2); font-weight: 600; }
+  td { background: var(--panel); color: var(--txt2); }
+  td b, td strong { color: var(--txt); }
+  td .mono { color: var(--txt); font-size: 14px; white-space: nowrap; }
+  .tablewrap { overflow-x: auto; }
+  .notes { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+  .notes li { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--amber); padding: 12px 16px; color: var(--txt2); font-size: 15px; }
+  .notes li b { color: var(--txt); }
+  .notes li.warn { border-left-color: var(--red); }
+
+  /* contents */
+  .four { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+  .col { background: var(--panel); border: 1px solid var(--line); }
+  .col h3 { margin: 0; padding: 10px 14px; background: var(--panel2); border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 14px; letter-spacing: 0.1em; }
+  .col h3 b { color: var(--amber); margin-right: 8px; }
+  .col h3 small { display: block; font-family: var(--sans); font-size: 13.5px; letter-spacing: 0; color: var(--txt2); font-weight: 400; margin-top: 2px; }
+  .col ol { margin: 0; padding: 10px 14px 12px; list-style: none; counter-reset: none; }
+  .col li { display: flex; gap: 10px; padding: 4px 0; font-size: 15px; color: var(--txt); }
+  .col li span { font-family: var(--mono); font-size: 13px; color: var(--txt3); padding-top: 2px; }
+  .hunts { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
+  .hunts li { font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em; border: 1px solid var(--line); background: var(--panel2); padding: 6px 10px; text-transform: uppercase; }
+  .key { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 22px; }
+  .key div { border: 1px solid var(--line); background: var(--panel); padding: 12px 14px; font-size: 14.5px; color: var(--txt2); }
+  .chip { font-family: var(--mono); font-weight: 700; font-size: 13px; padding: 2px 8px; margin-right: 10px; display: inline-block; }
+  .chip.a { background: var(--red); color: var(--ink); }
+  .chip.h { border: 1.5px solid var(--amber); color: var(--amber); }
+  .chip.c { color: var(--txt); padding-left: 0; }
+  .key b { color: var(--txt); font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.1em; margin-right: 6px; }
+
+  footer { margin-top: 64px; border-top: 1px solid var(--line); background: var(--panel2); color: var(--txt3); font-size: 14px; }
+  footer .wrap { padding-top: 22px; padding-bottom: 30px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  footer p { margin: 0; max-width: 78ch; }
+  footer .mono { letter-spacing: 0.12em; font-size: 12.5px; }
+
+  /* viewer */
+  dialog { border: 1px solid var(--line); background: var(--bg); color: var(--txt); padding: 0; width: min(1180px, 96vw); max-height: 94vh; }
+  dialog::backdrop { background: rgba(3, 6, 10, 0.82); }
+  .v { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
+  .v .pic { background: var(--tb, #000); border-right: 1px solid var(--line); display: flex; align-items: center; justify-content: center; }
+  .v .pic img { display: block; width: 100%; height: auto; max-height: 94vh; object-fit: contain; }
+  .v .info { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 14px; overflow-y: auto; max-height: 94vh; }
+  .v .bar { display: flex; align-items: center; gap: 10px; }
+  .v .bar h3 { margin: 0; font-size: 26px; flex: 1; }
+  .v button { font: 600 13px var(--mono); letter-spacing: 0.06em; background: var(--panel); color: var(--txt); border: 1px solid var(--line); padding: 8px 12px; cursor: pointer; }
+  .v button:hover { border-color: var(--amber); color: var(--amber); }
+  .v .desc { margin: 0; color: var(--txt2); }
+  .file { border: 1px solid var(--line); background: var(--panel); padding: 14px 16px; }
+  .file.first { border-color: var(--amber); }
+  .file h4 { margin: 0; font-family: var(--mono); font-size: 17px; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .file h4 small { font-size: 12.5px; color: var(--txt3); font-weight: 400; letter-spacing: 0.04em; }
+  .file p { margin: 6px 0 12px; color: var(--txt2); font-size: 14.5px; line-height: 1.45; }
+  .file .go { display: flex; gap: 8px; flex-wrap: wrap; }
+  .file .go a { font: 600 13px var(--mono); letter-spacing: 0.04em; text-decoration: none; padding: 9px 14px; border: 1px solid var(--line); color: var(--txt); background: var(--panel2); }
+  .file .go a:hover { border-color: var(--amber); color: var(--amber); }
+  .file .go a.dl { background: var(--amber); border-color: var(--amber); color: var(--ink); }
+  .file .go a.dl:hover { background: #FFC758; color: var(--ink); }
+
+  @media (max-width: 980px) {
+    header.top .wrap { grid-template-columns: 1fr; align-items: start; gap: 28px; padding-top: 40px; padding-bottom: 36px; }
+    .stats { justify-self: start; }
+    .cols { grid-template-columns: 1fr; }
+    .four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .key { grid-template-columns: 1fr; }
+    .v { grid-template-columns: 1fr; }
+    .v .pic { border-right: 0; border-bottom: 1px solid var(--line); }
+    .v .pic img { max-height: 52vh; }
+    .v .info { max-height: none; }
+    dialog { overflow-y: auto; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 16px; }
+    .four { grid-template-columns: 1fr; }
+    .stats div { padding: 10px 14px; }
+    .stats b { font-size: 24px; }
+    .strip .wrap span:last-child { display: none; }
+    .v .bar h3 { font-size: 21px; }
+    .v .info { padding: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .shot img { transition: none; } }
+</style>
+</head>
+<body>
+
+<div class="strip"><div class="wrap"><span>QUICK REFERENCE // PYTHON 3.10+</span><span>18 × 24 IN // 300 DPI // PNG</span></div></div>
+
+<header class="top">
+  <div class="wrap">
+    <div>
+      <p class="kicker">A WALL POSTER FOR LEARNING PYTHON</p>
+      <h1>Python <span>Cheat Sheet</span></h1>
+      <p class="lede">Syntax, data structures, functions, files and errors for beginner to intermediate Python, on one sheet. <b>Pick a theme, open the full-size file, and print it.</b></p>
+    </div>
+    <div class="stats" aria-label="What is on the sheet">
+      <div><b>28</b><span>reference sections</span></div>
+      <div><b>4</b><span>columns</span></div>
+      <div><b>12</b><span>colour themes</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="jump" aria-label="On this page"><div class="wrap"><a href="#themes">Themes</a><a href="#printing">Printing</a><a href="#contents">What's on the sheet</a></div></nav>
+
+<main class="wrap">
+
+<section id="themes">
+  <div class="band"><h2>Pick a theme</h2><p>Same content on every sheet. Select a preview for the full-size files.</p></div>
+  <div class="grid">
+    <article class="card" style="--tb:#161616; --ta:#78A9FF; --to:#161616" data-num="00" data-name="Night Shift" data-desc="Charcoal with hairline rules and one cool blue." data-preview="previews/00-night-shift.jpg" data-ground="#161616" data-accent="#78A9FF" data-on="#161616">
+      <a class="shot" href="posters/18x24/Python-Cheat-Sheet_00-Night-Shift_18x24_300dpi.png" aria-label="Night Shift: preview and full-size files"><img src="thumbs/00-night-shift.jpg" width="540" height="720" loading="lazy" alt="Night Shift theme of the Python Cheat Sheet poster. Charcoal with hairline rules and one cool blue."><span class="open">Preview + files</span></a>
+      <div class="meta"><span class="num">00</span><h3>Night Shift</h3><span class="sw" aria-hidden="true"><i style="background:#161616"></i><i style="background:#78A9FF"></i><i style="background:#3DDBD9"></i></span><p>Charcoal with hairline rules and one cool blue.</p></div>
+      <div class="sizes"><a class="main" href="posters/18x24/Python-Cheat-Sheet_00-Night-Shift_18x24_300dpi.png" target="_blank" rel="noopener" data-mb="3.6" title="Open the 18 × 24 in print file at full size">18 × 24</a><a href="posters/20x24/Python-Cheat-Sheet_00-Night-Shift_20x24_300dpi.png" target="_blank" rel="noopener" data-mb="3.6" title="Open the 20 × 24 in print file at full size">20 × 24</a><a href="posters/20x30/Python-Cheat-Sheet_00-Night-Shift_20x30_300dpi.png" target="_blank" rel="noopener" data-mb="4.0" title="Open the 20 × 30 in print file at full size">20 × 30</a></div>
+    </article>
+    <article class="card" style="--tb:#0A0A0A; --ta:#20E3D2; --to:#0A0A0A" data-num="01" data-name="Tealline" data-desc="Black and teal under a hazard stripe." data-preview="previews/01-tealline.jpg" data-ground="#0A0A0A" data-accent="#20E3D2" data-on="#0A0A0A">
+      <a class="shot" href="posters/18x24/Python-Cheat-Sheet_01-Tealline_18x24_300dpi.png" aria-label="Tealline: preview and full-size files"><img src="thumbs/01-tealline.jpg" width="540" height="720" loading="lazy" alt="Tealline theme of the Python Cheat Sheet poster. Black and teal under a hazard stripe."><span class="open">Preview + files</span></a>
+      <div class="meta"><span class="num">01</span><h3>Tealline</h3><span class="sw" aria-hidden="true"><i style="background:#0A0A0A"></i><i style="background:#20E3D2"></i><i style="background:#F2F0EB"></i></span><p>Black and teal under a hazard stripe.</p></div>
+      <div class="sizes"><a class="main" href="posters/18x24/Python-Cheat-Sheet_01-Tealline_18x24_300dpi.png" target="_blank" rel="noopener" data-mb="3.6" title="Open the 18 × 24 in print file at full size">18 × 24</a><a href="posters/20x24/Python-Cheat-Sheet_01-Tealline_20x24_300dpi.png" target="_blank" rel="noopener" data-mb="3.7" title="Open the 20 × 24 in print file at full size">20 × 24</a><a href="posters/20x30/Python-Cheat-Sheet_01-Tealline_20x30_300dpi.png" target="_blank" rel="noopener" data-mb="4.1" title="Open the 20 × 30 in print file at full size">20 × 30</a></div>
+    </article>
+    <article class="card" style="--tb:#020B0D; --ta:#2DE2E6; --to:#020B0D" data-num="02" data-name="Schematic" data-desc="Engineering drawing with a title block and amber results." data-preview="previews/02-schematic.jpg" data-ground="#020B0D" data-accent="#2DE2E6" data-on="#020B0D">
+      <a class="shot" href="posters/18x24/Python-Cheat-Sheet_02-Schematic_18x24_300dpi.png" aria-label="Schematic: preview and full-size files"><img src="thumbs/02-schematic.jpg" width="540" height="720" loading="lazy" alt="Schematic theme of the Python Cheat Sheet poster. Engineering drawing with a title block and amber results."><span class="open">Preview + files</span></a>
+      <div class="meta"><span class="num">02</span><h3>Schematic</h3><span class="sw" aria-hidden="true"><i style="background:#020B0D"></i><i style="background:#2DE2E6"></i><i style="background:#FFC857"></i></span><p>Engineering drawing with a title block and amber results.</p></div>
+      <div class="sizes"><a class="main" href="posters/18x24/Python-Cheat-Sheet_02-Schematic_18x24_300dpi.png" target="_blank" rel="noopener" data-mb="3.6" title="Open the 18 × 24 in print file at full size">18 × 24</a><a href="posters/20x24/Python-Cheat-Sheet_02-Schematic_20x24_300dpi.png" target="_blank" rel="noopener" data-mb="3.6" title="Open the 20 × 24 in print file at full size">20 × 24</a><a href="posters/20x30/Python-Cheat-Sheet_02-Schematic_20x30_300dpi.png" target="_blank" rel="noopener" data-mb="4.0" title="Open the 20 × 30 in print file at full size">20 × 30</a></div>
+    </article>
+    <article class="card" style="--tb:#F3F1EC; --ta:#D10000; --to:#FFFFFF" data-num="03" data-name="Swiss Grid" data-desc="Warm paper, black grotesque type, one red. Light on ink." data-preview="previews/03-swiss-grid.jpg" data-ground="#F3F1EC" data-accent="#D10000" data-on="#FFFFFF">
+      <a class="shot" href="posters/18x24/Python-Cheat-Sheet_03-Swiss-Grid_18x24_300dpi.png" aria-label="Swiss Grid: preview and full-size files"><img src="thumbs/03-swiss-grid.jpg" width="540" height="720" loading="lazy" alt="Swiss Grid theme of the Python Cheat Sheet poster. Warm paper, black grotesque type, one red. Light on ink."><span class="open">Preview + files</span></a>
+      <div class="meta"><span class="num">03</span><h3>Swiss Grid</h3><span class="sw" aria-hidden="true"><i style="background:#F3F1EC"></i><i style="background:#D10000"></i><i style="background:#111111"></i></span><p>Warm paper, black grotesque type, one red. Light on ink.</p></div>
+      <div class="sizes"><a class="main" href="posters/18x24/Python-Cheat-Sheet_03-Swiss-Grid_18x24_300dpi.png" target="_blank" rel="noopener" data-mb="3.7" title="Open the 18 × 24 in print file at full size">18 × 24</a><a href="posters/20x24/Python-Cheat-Sheet_03-Swiss-Grid_20x24_300dpi.png" target="_blank" rel="noopener" data-mb="3.8" title="Open the 20 × 24 in print file at full size">20 × 24</a><a href="posters/20x30/Python-Cheat-Sheet_03-Swiss-Grid_20x30_300dpi.png" target="_blank" rel="noopener" data-mb="4.2" title="Open the 20 × 30 in print file at full size">20 × 30</a></div>
+    </article>
+    <article class="card" style="--tb:#07060B; --ta:#FF2BD6; --to:#07060B" data-num="04" data-name="Neon Arcade" data-desc="Glowing magenta and cyan panels on black." data-preview="previews/04-neon-arcade.jpg" data-ground="#07060B" data-accent="#FF2BD6" data-on="#07060B">
+      <a class="shot" href="posters/18x24/Python-Cheat-Sheet_04-Neon-Arcade_18x24_300dpi.png" aria-label="Neon Arcade: preview and full-size files"><img src="thumbs/04-neon-arcade.jpg" width="540" height="720" loading="lazy" alt="Neon Arcade theme of the Python Cheat Sheet poster. Glowing magenta and cyan panels on black."><span class="open">Preview + files</span></a>
+      <div class="meta"><span class="num">04</span><h3>Neon Arcade</h3><span class="sw" aria-hidden="true"><i style="background:#07060B"></i><i style="background:#FF2BD6"></i><i style="background:#00F0FF"></i></span><p>Glowing magenta and cyan panels on black.</p></div>
+      <div class="sizes"><a class="main" href="posters/18x24/Python-Cheat-Sheet_04-Neon-Arcade_18x24_300dpi.png" target="_blank" rel="noopener" data-mb="4.8" title="Open the 18 × 24 in print file at full size">18 × 24</a><a href="posters/20x24/Python-Cheat-Sheet_04-Neon-Arcade_20x24_300dpi.png" target="_blank" rel="noopener" data-mb="4.9" title="Open the 20 × 24 in print file at full size">20 × 24</a><a href="posters/20x30/Python-Cheat-Sheet_04-Neon-Arcade_20x30_300dpi.png" target="_blank" rel="noopener" data-mb="5.6" title="Open the 20 × 30 in print file at full size">20 × 30</a></div>
+    </article>
+    <article class="card" style="--tb:#FFFFFF; --ta:#B5450A; --to:#FFFFFF" data-num="05" data-name="Notebook" data-desc="White notebook page with grey code cells. Light on ink." data-preview="previews/05-notebook.jpg" data-ground="#FFFFFF" data-accent="#B5450A" data-on="#FFFFFF">
+      <a class="shot" href="posters/18x24/Python-Cheat-Sheet_05-Notebook_18x24_300dpi.png" aria-label="Notebook: preview and full-size files"><img src="thumbs/05-notebook.jpg" width="540" height="720" loading="lazy" alt="Notebook theme of the Python Cheat Sheet poster. White notebook page with grey code cells. Light on ink."><span class="open">Preview + files</span></a>
+      <div class="meta"><span class="num">05</span><h3>Notebook</h3><span class="sw" aria-hidden="true"><i style="background:#FFFFFF"></i><i style="background:#B5450A"></i><i style="background:#1A56B8"></i></span><p>White notebook page with grey code cells. Light on ink.</p></div>
+      <div class="sizes"><a class="main" href="posters/18x24/Python-Cheat-Sheet_05-Notebook_18x24_300dpi.png" target="_blank" rel="noopener" data-mb="3.9" title="Open the 18 × 24 in print file at full size">18 × 24</a><a href="posters/20x24/Python-Cheat-Sheet_05-Notebook_20x24_300dpi.png" target="_blank" rel="noopener" data-mb="4.0" title="Open the 20 × 24 in print file at full size">20 × 24</a><a href="posters/20x30/Python-Cheat-Sheet_05-Notebook_20x30_300dpi.png" target="_blank" rel="noopener" data-mb="4.4" title="Open the 20 × 30 in print file at full size">20 × 30</a></div>
+    </article>
+    <article class="card" style="--tb:#EFE8D8; --ta:#46622A; --to:#EFE8D8" data-num="06" data-name="Zen Garden" data-desc="Sand, ink and moss with a brush ring. Light on ink." data-preview="previews/06-zen-garden.jpg" data-ground="#EFE8D8" data-accent="#46622A" data-on="#EFE8D8">
+      <a class="shot" href="posters/18x24/Python-Cheat-Sheet_06-Zen-Garden_18x24_300dpi.png" aria-label="Zen Garden: preview and full-size files"><img src="thumbs/06-zen-garden.jpg" width="540" height="720" loading="lazy" alt="Zen Garden theme of the Python Cheat Sheet poster. Sand, ink and moss with a brush ring. Light on ink."><span class="open">Preview + files</span></a>
+      <div class="meta"><span class="num">06</span><h3>Zen Garden</h3><span class="sw" aria-hidden="true"><i style="background:#EFE8D8"></i><i style="background:#46622A"></i><i style="background:#A5321C"></i></span><p>Sand, ink and moss with a brush ring. Light on ink.</p></div>
+      <div class="sizes"><a class="main" href="posters/18x24/Python-Cheat-Sheet_06-Zen-Garden_18x24_300dpi.png" target="_blank" rel="noopener" data-mb="4.2" title="Open the 18 × 24 in print file at full size">18 × 24</a><a href="posters/20x24/Python-Cheat-Sheet_06-Zen-Garden_20x24_300dpi.png" target="_blank" rel="noopener" data-mb="4.2" title="Open the 20 × 24 in print file at full size">20 × 24</a><a href="posters/20x30/Python-Cheat-Sheet_06-Zen-Garden_20x30_300dpi.png" target="_blank" rel="noopener" data-mb="4.7" title="Open the 20 × 30 in print file at full size">20 × 30</a></div>
+    </article>
+    <article class="card" style="--tb:#F3E7CB; --ta:#55247A; --to:#F3E7CB" data-num="07" data-name="Playbill" data-desc="Cream theatre bill in fat slab type and purple. Light on ink." data-preview="previews/07-playbill.jpg" data-ground="#F3E7CB" data-accent="#55247A" data-on="#F3E7CB">
+      <a class="shot" href="posters/18x24/Python-Cheat-Sheet_07-Playbill_18x24_300dpi.png" aria-label="Playbill: preview and full-size files"><img src="thumbs/07-playbill.jpg" width="540" height="720" loading="lazy" alt="Playbill theme of the Python Cheat Sheet poster. Cream theatre bill in fat slab type and purple. Light on ink."><span class="open">Preview + files</span></a>
+      <div class="meta"><span class="num">07</span><h3>Playbill</h3><span class="sw" aria-hidden="true"><i style="background:#F3E7CB"></i><i style="background:#55247A"></i><i style="background:#7A5200"></i></span><p>Cream theatre bill in fat slab type and purple. Light on ink.</p></div>
+      <div class="sizes"><a class="main" href="posters/18x24/Python-Cheat-Sheet_07-Playbill_18x24_300dpi.png" target="_blank" rel="noopener" data-mb="4.0" title="Open the 18 × 24 in print file at full size">18 × 24</a><a href="posters/20x24/Python-Cheat-Sheet_07-Playbill_20x24_300dpi.png" target="_blank" rel="noopener" data-mb="4.0" title="Open the 20 × 24 in print file at full size">20 × 24</a><a href="posters/20x30/Python-Cheat-Sheet_07-Playbill_20x30_300dpi.png" target="_blank" rel="noopener" data-mb="4.4" title="Open the 20 × 30 in print file at full size">20 × 30</a></div>
+    </article>
+    <article class="card" style="--tb:#1E3B2F; --ta:#F5D565; --to:#1E3B2F" data-num="08" data-name="Chalkboard" data-desc="Slate green with yellow, pink and blue chalk." data-preview="previews/08-chalkboard.jpg" data-ground="#1E3B2F" data-accent="#F5D565" data-on="#1E3B2F">
+      <a class="shot" href="posters/18x24/Python-Cheat-Sheet_08-Chalkboard_18x24_300dpi.png" aria-label="Chalkboard: preview and full-size files"><img src="thumbs/08-chalkboard.jpg" width="540" height="720" loading="lazy" alt="Chalkboard theme of the Python Cheat Sheet poster. Slate green with yellow, pink and blue chalk."><span class="open">Preview + files</span></a>
+      <div class="meta"><span class="num">08</span><h3>Chalkboard</h3><span class="sw" aria-hidden="true"><i style="background:#1E3B2F"></i><i style="background:#F5D565"></i><i style="background:#9AD1E8"></i></span><p>Slate green with yellow, pink and blue chalk.</p></div>
+      <div class="sizes"><a class="main" href="posters/18x24/Python-Cheat-Sheet_08-Chalkboard_18x24_300dpi.png" target="_blank" rel="noopener" data-mb="4.3" title="Open the 18 × 24 in print file at full size">18 × 24</a><a href="posters/20x24/Python-Cheat-Sheet_08-Chalkboard_20x24_300dpi.png" target="_blank" rel="noopener" data-mb="4.4" title="Open the 20 × 24 in print file at full size">20 × 24</a><a href="posters/20x30/Python-Cheat-Sheet_08-Chalkboard_20x30_300dpi.png" target="_blank" rel="noopener" data-mb="4.9" title="Open the 20 × 30 in print file at full size">20 × 30</a></div>
+    </article>
+    <article class="card" style="--tb:#9BBC0F; --ta:#0F380F; --to:#9BBC0F" data-num="09" data-name="Handheld" data-desc="Olive game screen with pixel type." data-preview="previews/09-handheld.jpg" data-ground="#9BBC0F" data-accent="#0F380F" data-on="#9BBC0F">
+      <a class="shot" href="posters/18x24/Python-Cheat-Sheet_09-Handheld_18x24_300dpi.png" aria-label="Handheld: preview and full-size files"><img src="thumbs/09-handheld.jpg" width="540" height="720" loading="lazy" alt="Handheld theme of the Python Cheat Sheet poster. Olive game screen with pixel type."><span class="open">Preview + files</span></a>
+      <div class="meta"><span class="num">09</span><h3>Handheld</h3><span class="sw" aria-hidden="true"><i style="background:#9BBC0F"></i><i style="background:#0F380F"></i><i style="background:#306230"></i></span><p>Olive game screen with pixel type.</p></div>
+      <div class="sizes"><a class="main" href="posters/18x24/Python-Cheat-Sheet_09-Handheld_18x24_300dpi.png" target="_blank" rel="noopener" data-mb="2.1" title="Open the 18 × 24 in print file at full size">18 × 24</a><a href="posters/20x24/Python-Cheat-Sheet_09-Handheld_20x24_300dpi.png" target="_blank" rel="noopener" data-mb="2.1" title="Open the 20 × 24 in print file at full size">20 × 24</a><a href="posters/20x30/Python-Cheat-Sheet_09-Handheld_20x30_300dpi.png" target="_blank" rel="noopener" data-mb="2.4" title="Open the 20 × 30 in print file at full size">20 × 30</a></div>
+    </article>
+    <article class="card" style="--tb:#E8DCC0; --ta:#8A3B12; --to:#F4ECD8" data-num="10" data-name="Punch Card" data-desc="Manila punched card with typewriter heads. Light on ink." data-preview="previews/10-punch-card.jpg" data-ground="#E8DCC0" data-accent="#8A3B12" data-on="#F4ECD8">
+      <a class="shot" href="posters/18x24/Python-Cheat-Sheet_10-Punch-Card_18x24_300dpi.png" aria-label="Punch Card: preview and full-size files"><img src="thumbs/10-punch-card.jpg" width="540" height="720" loading="lazy" alt="Punch Card theme of the Python Cheat Sheet poster. Manila punched card with typewriter heads. Light on ink."><span class="open">Preview + files</span></a>
+      <div class="meta"><span class="num">10</span><h3>Punch Card</h3><span class="sw" aria-hidden="true"><i style="background:#E8DCC0"></i><i style="background:#8A3B12"></i><i style="background:#2F4B7C"></i></span><p>Manila punched card with typewriter heads. Light on ink.</p></div>
+      <div class="sizes"><a class="main" href="posters/18x24/Python-Cheat-Sheet_10-Punch-Card_18x24_300dpi.png" target="_blank" rel="noopener" data-mb="3.8" title="Open the 18 × 24 in print file at full size">18 × 24</a><a href="posters/20x24/Python-Cheat-Sheet_10-Punch-Card_20x24_300dpi.png" target="_blank" rel="noopener" data-mb="3.9" title="Open the 20 × 24 in print file at full size">20 × 24</a><a href="posters/20x30/Python-Cheat-Sheet_10-Punch-Card_20x30_300dpi.png" target="_blank" rel="noopener" data-mb="4.2" title="Open the 20 × 30 in print file at full size">20 × 30</a></div>
+    </article>
+    <article class="card" style="--tb:#0E1726; --ta:#FF7F6A; --to:#0E1726" data-num="11" data-name="Marquee" data-desc="Midnight navy with thin capitals, gold and coral." data-preview="previews/11-marquee.jpg" data-ground="#0E1726" data-accent="#FF7F6A" data-on="#0E1726">
+      <a class="shot" href="posters/18x24/Python-Cheat-Sheet_11-Marquee_18x24_300dpi.png" aria-label="Marquee: preview and full-size files"><img src="thumbs/11-marquee.jpg" width="540" height="720" loading="lazy" alt="Marquee theme of the Python Cheat Sheet poster. Midnight navy with thin capitals, gold and coral."><span class="open">Preview + files</span></a>
+      <div class="meta"><span class="num">11</span><h3>Marquee</h3><span class="sw" aria-hidden="true"><i style="background:#0E1726"></i><i style="background:#FF7F6A"></i><i style="background:#C9A86A"></i></span><p>Midnight navy with thin capitals, gold and coral.</p></div>
+      <div class="sizes"><a class="main" href="posters/18x24/Python-Cheat-Sheet_11-Marquee_18x24_300dpi.png" target="_blank" rel="noopener" data-mb="3.7" title="Open the 18 × 24 in print file at full size">18 × 24</a><a href="posters/20x24/Python-Cheat-Sheet_11-Marquee_20x24_300dpi.png" target="_blank" rel="noopener" data-mb="3.7" title="Open the 20 × 24 in print file at full size">20 × 24</a><a href="posters/20x30/Python-Cheat-Sheet_11-Marquee_20x30_300dpi.png" target="_blank" rel="noopener" data-mb="3.9" title="Open the 20 × 30 in print file at full size">20 × 30</a></div>
+    </article>
+  </div>
+  <p class="hint">Each button under a preview opens that print file at full size in a new tab. Right-click it to save, or use the download buttons in the preview.</p>
+</section>
+
+<section id="printing">
+  <div class="band"><h2>Printing</h2><p>Every file is a lossless PNG drawn at 300 dpi, in sRGB.</p></div>
+  <div class="cols">
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Order this size</th><th>Use this file</th><th>Pixels</th><th>What comes out</th></tr></thead>
+        <tbody>
+          <tr><td><b>18 × 24 in</b></td><td><span class="mono">18x24</span></td><td><span class="mono">5400 × 7200</span></td><td>The poster edge to edge, as designed. For any print shop that lists 18 × 24.</td></tr>
+          <tr><td><b>20 × 24 in</b></td><td><span class="mono">20x24</span></td><td><span class="mono">6000 × 7200</span></td><td>The poster at exactly its 18 × 24 size, with 1 in of matching background on the left and right. Trim the sides to fit an 18 × 24 frame.</td></tr>
+          <tr><td><b>20 × 30 in</b></td><td><span class="mono">20x30</span></td><td><span class="mono">6000 × 9000</span></td><td>The poster 11% larger (20 × 26.7 in), with a 1.7 in band of matching background above and below.</td></tr>
+          <tr><td><b>24 × 36 in</b></td><td><span class="mono">20x30</span></td><td><span class="mono">6000 × 9000</span></td><td>The same file, one third larger than the original (24 × 32 in) with 2 in bands. Prints at 250 dpi.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="notes">
+      <li class="warn"><b>Walgreens and Sam's Club.</b> As of November 2026 neither lists 18 × 24 among its poster sizes. Both list 20 × 30 and 24 × 36, and Sam's Club also lists 20 × 24, so use a store-size file there. Uploading the 18 × 24 file to another size would crop it.</li>
+      <li><b>Before you pay,</b> check that the store's preview shows the whole sheet, from the title to the footer line, with nothing cut off.</li>
+      <li><b>Paper.</b> Matte hides glare on the dark themes. Swiss Grid, Notebook, Zen Garden, Playbill and Punch Card have light backgrounds and use far less ink.</li>
+      <li><b>Type size.</b> At 18 × 24 the code prints at about 10 pt and the smallest labels at 9 pt. At 24 × 36 that becomes about 13.5 pt and 12 pt.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contents">
+  <div class="band"><h2>What's on the sheet</h2><p>Twenty-eight reference sections in four columns, from a first variable to files, errors and common traps.</p></div>
+  <div class="four">
+    <div class="col"><h3><b>A</b>FOUNDATIONS<small>values, text and numbers</small></h3><ol><li><span>01</span>Variables &amp; types</li><li><span>02</span>Operators</li><li><span>03</span>Strings</li><li><span>04</span>f-strings</li><li><span>05</span>Escapes &amp; raw strings</li><li><span>06</span>Numbers &amp; math</li><li><span>07</span>Print, input &amp; comments</li></ol></div>
+    <div class="col"><h3><b>B</b>DATA STRUCTURES<small>holding many values</small></h3><ol><li><span>08</span>The four collections</li><li><span>09</span>Indexing &amp; slicing</li><li><span>10</span>Lists</li><li><span>11</span>Dictionaries</li><li><span>12</span>Sets</li><li><span>13</span>Comprehensions</li><li><span>14</span>Unpacking</li><li><span>15</span>Built-ins for collections</li><li><span>16</span>Nested data &amp; copies</li></ol></div>
+    <div class="col"><h3><b>C</b>FLOW, FUNCTIONS &AMP; CLASSES<small>deciding, repeating, reusing</small></h3><ol><li><span>17</span>Conditionals</li><li><span>18</span>Loops</li><li><span>19</span>Functions</li><li><span>20</span>Classes</li><li><span>21</span>Generators &amp; decorators</li></ol></div>
+    <div class="col"><h3><b>D</b>MODULES, FILES &AMP; ERRORS<small>the world outside your script</small></h3><ol><li><span>22</span>Modules &amp; imports</li><li><span>23</span>Packages &amp; environments</li><li><span>24</span>Files</li><li><span>25</span>Errors &amp; debugging</li><li><span>26</span>JSON</li><li><span>27</span>Standard library picks</li><li><span>28</span>Common traps</li></ol></div>
+  </div>
+  <div class="key">
+    <div><span class="chip a">KeyError</span><b>ERROR</b>the exception that line raises</div>
+    <div><span class="chip h">&rarr; 3.5</span><b>RESULT</b>what the line gives back</div>
+    <div><span class="chip c">in place</span><b>NOTE</b>a plain-words explanation beside the code</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Every example on the sheet was run on Python 3.11, 3.12 and 3.13. Check it against your own version. An independent reference, not affiliated with or endorsed by the Python Software Foundation. Python is a registered trademark of the Python Software Foundation.</p>
+    <p class="mono">CHECK AGAINST YOUR OWN VERSION</p>
+  </div>
+</footer>
+
+<dialog id="viewer" aria-labelledby="v-name">
+  <div class="v">
+    <div class="pic"><img id="v-img" alt="" width="1080" height="1440"></div>
+    <div class="info">
+      <div class="bar"><span class="num" id="v-num"></span><h3 id="v-name"></h3><button type="button" id="v-prev" aria-label="Previous theme">&larr;</button><button type="button" id="v-next" aria-label="Next theme">&rarr;</button><button type="button" id="v-close">CLOSE</button></div>
+      <p class="desc" id="v-desc"></p>
+      <div class="file first"><h4>18 × 24 in <small id="v-s0"></small></h4><p>The poster edge to edge, as designed. 5400 × 7200 px.</p><div class="go"><a class="dl" id="v-d0" download>Download PNG</a><a id="v-o0" target="_blank" rel="noopener">Open full size</a></div></div>
+      <div class="file"><h4>20 × 24 in <small id="v-s1"></small></h4><p>True 18 × 24 size with 1 in of background left and right. 6000 × 7200 px.</p><div class="go"><a class="dl" id="v-d1" download>Download PNG</a><a id="v-o1" target="_blank" rel="noopener">Open full size</a></div></div>
+      <div class="file"><h4>20 × 30 or 24 × 36 in <small id="v-s2"></small></h4><p>Enlarged to fill the width, with a background band above and below. 6000 × 9000 px.</p><div class="go"><a class="dl" id="v-d2" download>Download PNG</a><a id="v-o2" target="_blank" rel="noopener">Open full size</a></div></div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var cards = [].slice.call(document.querySelectorAll('.card'));
+  var dlg = document.getElementById('viewer');
+  if (!dlg || typeof dlg.showModal !== 'function') return;   // without <dialog>, previews link straight to the 18x24 file
+  var at = 0;
+  function el(id) { return document.getElementById(id); }
+  function show(n) {
+    at = (n + cards.length) % cards.length;
+    var c = cards[at], d = c.dataset, links = c.querySelectorAll('.sizes a');
+    el('v-img').src = d.preview;
+    el('v-img').alt = c.querySelector('img').alt;
+    el('v-num').textContent = d.num;
+    el('v-num').style.cssText = 'background:' + d.accent + ';color:' + d.on;
+    el('v-name').textContent = d.name;
+    el('v-desc').textContent = d.desc;
+    dlg.querySelector('.pic').style.setProperty('--tb', d.ground);
+    for (var i = 0; i < 3; i++) {
+      el('v-d' + i).href = links[i].href;
+      el('v-o' + i).href = links[i].href;
+      el('v-s' + i).textContent = 'PNG · ' + links[i].dataset.mb + ' MB';
+    }
+    if (!dlg.open) dlg.showModal();
+  }
+  cards.forEach(function (c, n) {
+    c.querySelector('.shot').addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+      e.preventDefault();
+      show(n);
+    });
+  });
+  el('v-close').addEventListener('click', function () { dlg.close(); });
+  el('v-prev').addEventListener('click', function () { show(at - 1); });
+  el('v-next').addEventListener('click', function () { show(at + 1); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!dlg.open) return;
+    if (e.key === 'ArrowRight') show(at + 1);
+    if (e.key === 'ArrowLeft') show(at - 1);
+  });
+})();
+</script>
+</body>
+</html>
